@@ -9,14 +9,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 public class CustomAdapter extends BaseAdapter {
 
-    String[] names,mottos;
+    ArrayList<String> names,mottos;
     Context context;
    // int[] imgs;
-    CustomAdapter(Context context,String[] names,String[] mottos)
+    CustomAdapter(Context context,ArrayList<String> names,ArrayList<String> mottos)
     {
         this.context=context;
         this.names=names;
@@ -26,7 +27,7 @@ public class CustomAdapter extends BaseAdapter {
 
 
     public int getCount() {
-        return names.length;
+        return names.size();
     }
 
     @Override
@@ -50,8 +51,8 @@ public class CustomAdapter extends BaseAdapter {
 
         TextView namess=(TextView) view.findViewById(R.id.sample_view);
         TextView mt=(TextView) view.findViewById(R.id.mottos);
-        namess.setText(names[i]);
-        mt.setText(mottos[i]);
+        namess.setText(names.get(i));
+        mt.setText(mottos.get(i));
 
         //imageView.setImageResource(imgs[i]);
 

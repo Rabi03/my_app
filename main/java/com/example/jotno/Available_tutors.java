@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import static com.example.jotno.R.id.mottos;
@@ -18,9 +19,8 @@ import static com.example.jotno.R.id.names;
 public class Available_tutors extends AppCompatActivity {
 
 
-    String[] tutors;
-
-    String[] locations;
+    ArrayList<String> tutors;
+    ArrayList<String> locations;
 
    // Vector<Integer>v;
     //Vector<String>tutors;
@@ -40,8 +40,8 @@ public class Available_tutors extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        tutors=getIntent().getStringArrayExtra("names");
-        locations=getIntent().getStringArrayExtra("locations");
+        tutors= getIntent().getStringArrayListExtra("names");
+        locations=getIntent().getStringArrayListExtra("locations");
 
         setContentView(R.layout.activity_available_tutors);
         ListView names=(ListView) findViewById(R.id.names);
